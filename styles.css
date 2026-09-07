@@ -1,5 +1,5 @@
 /* Reset default browser styles */
-body, h1, h2, p, ul, li {
+body, h1, h2, ul, li {
     margin: 0;
     padding: 0;
 }
@@ -19,6 +19,34 @@ body {
 .container {
     width: 90%;
     margin: 0 auto;
+}
+
+#wrapper h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 12px;
+
+}
+#wrapper h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+    height: 4px;
+    background-color: #bd2a2e;
+    border-radius: 2px;
+    margin-bottom: 6px;
+}
+
+#wrapper a:not(.btn) {
+    color: #bd2a2e;
+}
+#wrapper a:hover:not(.btn) {
+    color: #333333;
+}
+#wrapper a:visited:not(.btn) {
+    color: #bd2a2e;
 }
 
 header {
@@ -257,6 +285,11 @@ header img {
     text-align: center;
 }
 
+.aboutPara {
+    max-width: 1000px;
+    margin: auto;
+}
+
 .card-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -270,6 +303,8 @@ header img {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .card img {
@@ -278,9 +313,27 @@ header img {
     max-width: 400px;
 }
 
+.project-grid {
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    gap: 50px;
+    width: 80%;
+    margin: 0 auto;
+}
+
 @media (max-width: 1000px) {
     .card-grid {
         grid-template-columns: 1fr;
+    }
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-left-col, .project-right-col {
+        list-style-position: inside;
+        padding-left: 0;
+        text-align: center;
+        align-items: center;
     }
 }
 
